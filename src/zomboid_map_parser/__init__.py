@@ -12,6 +12,7 @@ from zomboid_map_parser.parsers import (
     LotPackParser,
 )
 from zomboid_map_parser.utils.coordinates import CoordinateConverter
+from zomboid_map_parser.processing import Parser
 
 __version__ = "0.1.0"
 __author__ = "lukszi"
@@ -26,4 +27,5 @@ __all__ = [
     "LotHeaderParser",
     "LotPackParser",
     "CoordinateConverter",
+    "Parser"
 ]
