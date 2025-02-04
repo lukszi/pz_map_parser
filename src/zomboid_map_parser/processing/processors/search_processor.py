@@ -1,7 +1,7 @@
 # processing/processors/search_processor.py
 
 import logging
-from typing import Dict, List, Iterator
+from typing import Dict, List, Iterator, Tuple
 
 from zomboid_map_parser.processing.parallel import BatchProcessor, BatchProcessingConfig
 from zomboid_map_parser.models.world import MapCell
@@ -34,7 +34,7 @@ class SearchProcessor:
             self,
             cells: Dict[CellCoord, MapCell],
             tile_names: List[str]
-    ) -> Iterator[tuple[MapCell, List[tuple[LocalCellCoord, str]]]]:
+    ) -> Iterator[Tuple[MapCell, List[Tuple[LocalCellCoord, str]]]]:
         """
         Search for specific tiles across map cells sequentially.
 
@@ -66,7 +66,7 @@ class SearchProcessor:
             self,
             cells: Dict[CellCoord, MapCell],
             tile_names: List[str],
-    ) -> Iterator[List[tuple[MapCell, List[tuple[LocalCellCoord, str]]]]]:
+    ) -> Iterator[List[Tuple[MapCell, List[Tuple[LocalCellCoord, str]]]]]:
         """
         Search for tiles across cells in parallel batches.
 
@@ -79,9 +79,7 @@ class SearchProcessor:
         """
         tile_names_lower = [name.lower() for name in tile_names]
 
-        def process_cell(
-                cell: MapCell
-        ) -> tuple[MapCell, list[tuple[LocalCellCoord, str]]]:
+        def process_cell(cell: MapCell) -> Tuple[MapCell, List[Tuple[LocalCellCoord, str]]]:
             """Process a single cell for batch processing."""
             found_locations = self.map_processor.process_cell_for_search(
                 cell,

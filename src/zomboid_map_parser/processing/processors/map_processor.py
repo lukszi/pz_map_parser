@@ -46,9 +46,6 @@ class MapProcessor:
                 self.logger.error(f"Failed to parse header for cell {cell.coordinates}")
                 return
 
-            # Store the header in the cell
-            cell.header = header
-
             # Use the header information to parse the pack file
             cell_data = self._parse_pack(cell.pack_path, header.tile_names)
             if not cell_data:
@@ -56,15 +53,13 @@ class MapProcessor:
                 return
 
             # Store the parsed data in the cell
+            cell.header = header
             cell.data = cell_data
 
         except Exception as e:
             self.logger.error(
                 f"Error parsing map cell {cell.coordinates}: {str(e)}"
             )
-            # Clear any partially parsed data to avoid incomplete state
-            cell.header = None
-            cell.data = None
 
     def process_cell_for_search(
             self,
