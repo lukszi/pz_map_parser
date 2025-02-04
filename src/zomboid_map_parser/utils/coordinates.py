@@ -168,7 +168,7 @@ class CoordinateConverter:
         )
 
     @classmethod
-    def cell_to_world(cls, cell: CellCoord, local: LocalCellCoord) -> WorldCoord:
+    def cell_to_world(cls, cell: CellCoord, local: Optional[LocalCellCoord] = None) -> WorldCoord:
         """
         Convert cell coordinates and local position to world coordinates.
 
@@ -182,13 +182,18 @@ class CoordinateConverter:
         Returns:
             WorldCoord representing the absolute global position
         """
-        world_x = (cell.x * cls.CELL_SIZE) + local.x
-        world_y = (cell.y * cls.CELL_SIZE) + local.y
+        world_x = cell.x * cls.CELL_SIZE
+        world_y = cell.y * cls.CELL_SIZE
+        world_z = 0
+        if local:
+            world_x += local.x
+            world_y += local.y
+            world_z = local.z
 
-        return WorldCoord(world_x, world_y, local.z)
+        return WorldCoord(world_x, world_y, world_z)
 
     @classmethod
-    def chunk_to_world(cls, chunk: ChunkCoord, local: LocalChunkCoord) -> WorldCoord:
+    def chunk_to_world(cls, chunk: ChunkCoord, local: Optional[LocalChunkCoord] = None) -> WorldCoord:
         """
         Convert chunk coordinates and local position to world coordinates.
 
@@ -202,10 +207,15 @@ class CoordinateConverter:
         Returns:
             WorldCoord representing the absolute global position
         """
-        world_x = (chunk.x * cls.CHUNK_SIZE) + local.x
-        world_y = (chunk.y * cls.CHUNK_SIZE) + local.y
+        world_x = chunk.x * cls.CHUNK_SIZE
+        world_y = chunk.y * cls.CHUNK_SIZE
+        world_z = 0
+        if local:
+            world_x += local.x
+            world_y += local.y
+            world_z = local.z
 
-        return WorldCoord(world_x, world_y, local.z)
+        return WorldCoord(world_x, world_y, world_z)
 
     @classmethod
     def cell_to_chunks(cls, cell: CellCoord) -> Tuple[ChunkCoord, ChunkCoord]:
