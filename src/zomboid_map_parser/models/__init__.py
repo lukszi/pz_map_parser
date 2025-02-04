@@ -1,53 +1,48 @@
-# models/__init__.py
+# zomboid_map_parser/models/__init__.py
 """
 Data models for Project Zomboid map structures and game elements.
 
-This package provides a comprehensive set of data structures for representing
-various aspects of Project Zomboid's map system, from individual tiles to
-complete map cells. The models are organized hierarchically, with clear
-separation between different concerns:
+This package provides data structures for representing various aspects of
+Project Zomboid's map system. Models are organized hierarchically to represent
+different levels of the game world, from individual tiles to complete map cells.
 
-Core Components:
-    - Tile-related classes (Tile, TileDefinition, Tilesheet)
-    - Map structure classes (GridSquare, CellData)
-    - Property and metadata classes (TileProperty)
-
-Usage:
-    from zomboid_map_parser.models import Tile, GridSquare, CellData
-    from zomboid_map_parser.models.tiles import TileDefinition, Tilesheet
+Main Components:
+- Coordinate Models: Different coordinate systems used in the game
+- Tile Models: Representation of individual tiles and their properties
+- Grid Models: Structures for organizing tiles in the game world
+- Cell Models: Large-scale map organization
 """
 
-# Import all tile-related models through the tiles subpackage
-from .tiles import (
+from zomboid_map_parser.models.coordinates import (
+    WorldCoord,
+    CellCoord,
+    ChunkCoord,
+    LocalCellCoord,
+    LocalChunkCoord,
+)
+from zomboid_map_parser.models.tiles import (
     Tile,
     TileProperty,
     TileDefinition,
     TileCategory,
     Tilesheet,
-    LotHeader
+    LotHeader,
+)
+from zomboid_map_parser.models.world import (
+    GridSquare,
+    CellData,
+    MapCell,
 )
 
-# Import the grid and cell models
-from .world import GridSquare, MapCell, CellData
-
-# Import all the coordinate models
-from .coordinates import (
-    WorldCoord,
-    CellCoord,
-    ChunkCoord,
-
-    LocalCellCoord,
-    LocalChunkCoord
-)
-
-# Define what symbols should be available when using 'from models import *'
 __all__ = [
-    # Core map structures
-    "GridSquare",
-    "CellData",
-    "MapCell",
+    # Coordinate models
+    "WorldCoord",
+    "CellCoord",
+    "ChunkCoord",
+    "LocalCellCoord",
+    "LocalChunkCoord",
 
-    # Tile-related classes
+    # Tile models
     "Tile",
     "TileProperty",
     "TileDefinition",
@@ -55,10 +50,8 @@ __all__ = [
     "Tilesheet",
     "LotHeader",
 
-    # Coordinate classes
-    "WorldCoord",
-    "CellCoord",
-    "ChunkCoord",
-    "LocalCellCoord",
-    "LocalChunkCoord"
+    # World structure models
+    "GridSquare",
+    "CellData",
+    "MapCell",
 ]
