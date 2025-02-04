@@ -1,3 +1,4 @@
+# zomboid_map_parser/models/coordinates/absolute.py
 from dataclasses import dataclass
 
 

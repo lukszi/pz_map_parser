@@ -1,10 +1,15 @@
-# processing/processors/__init__.py
+# zomboid_map_parser/processing/processors/__init__.py
 """
-Processors for handling different aspects of map data parsing and analysis.
+Specialized processors for different aspects of map data parsing.
 
-This package provides specialized processors that handle distinct aspects of
-the parsing and processing pipeline. Each processor is focused on a specific
-domain of responsibility while maintaining clean interfaces with other components.
+This package provides dedicated processors that handle specific aspects of the
+parsing pipeline. Each processor focuses on a particular domain of responsibility
+while maintaining clean interfaces with other components.
+
+Main Components:
+- MapProcessor: Handles parsing of map cell data
+- TileProcessor: Manages tile definitions and relationships
+- SearchProcessor: Coordinates searching operations across map data
 """
 
 from zomboid_map_parser.processing.processors.map_processor import MapProcessor
