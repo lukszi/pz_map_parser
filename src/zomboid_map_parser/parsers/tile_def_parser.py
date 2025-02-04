@@ -6,8 +6,8 @@ from dataclasses import dataclass
 import logging
 from pathlib import Path
 
-from ..io import BinaryReader
-from ..models import Tilesheet, TileDefinition, TileProperty
+from zomboid_map_parser.io import BinaryReader
+from zomboid_map_parser.models import Tilesheet, TileDefinition, TileProperty
 from zomboid_map_parser.utils.exceptions import TileParserError
 
 

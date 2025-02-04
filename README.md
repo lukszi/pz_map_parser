@@ -56,7 +56,8 @@ The parser handles three main coordinate systems used by Project Zomboid:
 The library provides utilities to convert between these coordinate systems:
 
 ```python
-from zomboid_map_parser.utils import CoordinateConverter, WorldCoord
+from zomboid_map_parser.utils import CoordinateConverter
+from zomboid_map_parser.models.coordinates.absolute import WorldCoord
 
 # Convert world coordinates to cell coordinates
 world_pos = WorldCoord(x=750, y=450, z=0)
@@ -102,21 +103,23 @@ results = parser.search_tiles(tile_names, bounds=bounds)
 For more granular control, you can process individual map cells:
 
 ```python
-from zomboid_map_parser.utils import CellCoord, LocalCellCoord
+
+from zomboid_map_parser.models.coordinates.relative import LocalCellCoord
+from zomboid_map_parser.models.coordinates.absolute import CellCoord
 
 # Get a specific cell
 cell_coord = CellCoord(x=10, y=10)
 cell = parser.get_cell_at_coordinates(cell_coord)
 
 if cell:
-    # Access cell data
-    for z in range(8):  # 8 height levels
-        for x in range(300):
-            for y in range(300):
-                square = cell.data.get_square(LocalCellCoord(x, y, z))
-                # Process tile data
-                for tile in square.floor_tiles:
-                    print(f"Floor tile: {tile.texture_name}")
+   # Access cell data
+   for z in range(8):  # 8 height levels
+      for x in range(300):
+         for y in range(300):
+            square = cell.data.get_square(LocalCellCoord(x, y, z))
+            # Process tile data
+            for tile in square.floor_tiles:
+               print(f"Floor tile: {tile.texture_name}")
 ```
 
 ## Contributing

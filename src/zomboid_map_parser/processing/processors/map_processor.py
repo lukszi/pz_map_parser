@@ -4,10 +4,10 @@ import logging
 from pathlib import Path
 from typing import Optional, List, Tuple
 
-from ...io import BinaryReader
-from ...models import MapCell, CellData, LotHeader
-from ...parsers import LotHeaderParser, LotPackParser
-from ...utils import LocalCellCoord
+from zomboid_map_parser.io import BinaryReader
+from zomboid_map_parser.models import MapCell, CellData, LotHeader
+from zomboid_map_parser.parsers import LotHeaderParser, LotPackParser
+from zomboid_map_parser.models.coordinates import LocalCellCoord
 
 
 class MapProcessor:

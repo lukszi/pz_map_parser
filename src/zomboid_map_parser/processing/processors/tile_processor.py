@@ -4,9 +4,9 @@ import logging
 from pathlib import Path
 from typing import Dict, Optional
 
-from ...io import BinaryReader
-from ...models import TileDefinition
-from ...parsers.tile_def_parser import TileDefParser, TileDefParserConfig
+from zomboid_map_parser.io import BinaryReader
+from zomboid_map_parser.models import TileDefinition
+from zomboid_map_parser.parsers.tile_def_parser import TileDefParser, TileDefParserConfig
 
 
 class TileProcessor:

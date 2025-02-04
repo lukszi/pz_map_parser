@@ -7,6 +7,6 @@ processing operations, serving as the primary entry point for map parsing
 and analysis operations.
 """
 
-from .parser import Parser
+from zomboid_map_parser.processing.core.parser import Parser
 
 __all__ = ["Parser"]

@@ -7,7 +7,7 @@ operations, particularly focused on batch processing of large datasets in
 a memory-efficient manner.
 """
 
-from .batch_processor import BatchProcessor, BatchProcessingConfig
+from zomboid_map_parser.processing.parallel.batch_processor import BatchProcessor, BatchProcessingConfig
 
 __all__ = [
     "BatchProcessor",

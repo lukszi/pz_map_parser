@@ -4,8 +4,9 @@ from pathlib import Path
 from typing import Optional
 
 from .cell import CellData
-from ..tiles.containers import LotHeader
-from ...utils import LocalCellCoord, CellCoord, CoordinateConverter
+from zomboid_map_parser.models.tiles import LotHeader
+from zomboid_map_parser.utils import CoordinateConverter
+from zomboid_map_parser.models.coordinates import LocalCellCoord, CellCoord
 
 
 @dataclass

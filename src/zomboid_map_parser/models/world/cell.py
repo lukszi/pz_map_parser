@@ -2,7 +2,7 @@
 from typing import Dict
 
 from .grid import GridSquare
-from zomboid_map_parser.utils.coordinates import LocalCellCoord
+from zomboid_map_parser.models.coordinates import LocalCellCoord
 
 
 class CellData:

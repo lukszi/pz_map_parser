@@ -3,9 +3,9 @@ from typing import Optional
 import logging
 from dataclasses import dataclass
 
-from ..io import BinaryReader
+from zomboid_map_parser.io import BinaryReader
 from zomboid_map_parser.utils.exceptions import LotHeaderParserError
-from ..models import LotHeader
+from zomboid_map_parser.models import LotHeader
 
 @dataclass
 class LotHeaderParserConfig:

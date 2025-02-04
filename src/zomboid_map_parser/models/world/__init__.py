@@ -1,7 +1,7 @@
 # Import the grid and cell models
-from .grid import GridSquare
-from .cell import CellData
-from .map_cell import MapCell
+from zomboid_map_parser.models.world.grid import GridSquare
+from zomboid_map_parser.models.world.cell import CellData
+from zomboid_map_parser.models.world.map_cell import MapCell
 
 __all__ = [
     # Core map structures

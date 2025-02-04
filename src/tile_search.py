@@ -1,3 +1,4 @@
+import math
 from pathlib import Path
 import logging
 from typing import Iterator, Tuple, List, Union
@@ -5,7 +6,9 @@ from typing import Iterator, Tuple, List, Union
 from zomboid_map_parser import CoordinateConverter
 from zomboid_map_parser.processing import Parser
 from zomboid_map_parser.models import MapCell
-from zomboid_map_parser.utils import BoundsCoord, LocalCellCoord
+from zomboid_map_parser.utils import BoundsCoord
+from zomboid_map_parser.models.coordinates.relative import LocalCellCoord
+from zomboid_map_parser.models.coordinates.absolute import WorldCoord
 
 
 def search_world_for_tile(

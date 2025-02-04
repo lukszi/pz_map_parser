@@ -4,14 +4,12 @@ import logging
 from pathlib import Path
 from typing import Dict, List, Optional, Iterator, Union, Tuple
 
-from ..processors import MapProcessor, TileProcessor, SearchProcessor
-from ...io import FileManager
-from ...models.world import MapCell
+from zomboid_map_parser.processing.processors import MapProcessor, TileProcessor, SearchProcessor
+from zomboid_map_parser.io import FileManager
+from zomboid_map_parser.models.world import MapCell
 from zomboid_map_parser.utils.exceptions import ParserError
-from ...utils.coordinates import (
-    WorldCoord, CellCoord, LocalCellCoord, BoundsCoord,
-    CoordinateConverter
-)
+from zomboid_map_parser.utils.coordinates import BoundsCoord, CoordinateConverter
+from zomboid_map_parser.models.coordinates import LocalCellCoord, WorldCoord, CellCoord
 
 
 class Parser:

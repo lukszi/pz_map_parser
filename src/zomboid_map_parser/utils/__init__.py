@@ -3,8 +3,6 @@
 Utility functions and helpers for coordinate conversion and data processing.
 """
 
-from zomboid_map_parser.utils.coordinates import CoordinateConverter, WorldCoord, CellCoord, ChunkCoord, \
-    LocalChunkCoord, LocalCellCoord, BoundsCoord
+from zomboid_map_parser.utils.coordinates import CoordinateConverter, BoundsCoord
 
-__all__ = ["CoordinateConverter", "WorldCoord", "CellCoord", "ChunkCoord", "LocalChunkCoord", "LocalCellCoord",
-           "BoundsCoord"]
+__all__ = ["CoordinateConverter", "BoundsCoord"]

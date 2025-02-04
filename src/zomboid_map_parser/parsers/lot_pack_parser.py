@@ -4,13 +4,10 @@ from dataclasses import dataclass
 from typing import Dict, List, Optional
 import logging
 
-from ..io import BinaryReader
-from ..models import CellData, Tile
+from zomboid_map_parser.io import BinaryReader
+from zomboid_map_parser.models import CellData, Tile, LocalCellCoord, ChunkCoord
 from zomboid_map_parser.utils.exceptions import LotPackParserError
-from ..utils.coordinates import (
-    ChunkCoord, LocalCellCoord,
-    CoordinateConverter
-)
+from zomboid_map_parser.utils.coordinates import CoordinateConverter
 
 
 @dataclass

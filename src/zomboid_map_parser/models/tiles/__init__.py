@@ -3,9 +3,9 @@
 Tile-related models.
 """
 
-from .base import Tile, TileProperty
-from .definitions import TileDefinition, TileCategory
-from .containers import Tilesheet, LotHeader
+from zomboid_map_parser.models.tiles.base import Tile, TileProperty
+from zomboid_map_parser.models.tiles.definitions import TileDefinition, TileCategory
+from zomboid_map_parser.models.tiles.containers import Tilesheet, LotHeader
 
 __all__ = [
     "Tile",

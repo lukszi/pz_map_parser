@@ -2,7 +2,7 @@
 from typing import List, Optional
 
 from zomboid_map_parser.models.tiles import Tile
-from zomboid_map_parser.utils.coordinates import LocalChunkCoord, LocalCellCoord
+from zomboid_map_parser.models.coordinates import LocalCellCoord, LocalChunkCoord
 
 
 class GridSquare:

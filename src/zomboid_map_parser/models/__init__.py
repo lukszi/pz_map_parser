@@ -30,6 +30,16 @@ from .tiles import (
 # Import the grid and cell models
 from .world import GridSquare, MapCell, CellData
 
+# Import all the coordinate models
+from .coordinates import (
+    WorldCoord,
+    CellCoord,
+    ChunkCoord,
+
+    LocalCellCoord,
+    LocalChunkCoord
+)
+
 # Define what symbols should be available when using 'from models import *'
 __all__ = [
     # Core map structures
@@ -44,4 +54,11 @@ __all__ = [
     "TileCategory",
     "Tilesheet",
     "LotHeader",
+
+    # Coordinate classes
+    "WorldCoord",
+    "CellCoord",
+    "ChunkCoord",
+    "LocalCellCoord",
+    "LocalChunkCoord"
 ]

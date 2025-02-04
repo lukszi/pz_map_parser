@@ -3,10 +3,10 @@
 import logging
 from typing import Dict, List, Iterator
 
-from ..parallel import BatchProcessor, BatchProcessingConfig
-from ...models.world import MapCell
-from .map_processor import MapProcessor
-from ...utils import LocalCellCoord, CellCoord
+from zomboid_map_parser.processing.parallel import BatchProcessor, BatchProcessingConfig
+from zomboid_map_parser.models.world import MapCell
+from zomboid_map_parser.processing.processors.map_processor import MapProcessor
+from zomboid_map_parser.models.coordinates import LocalCellCoord, CellCoord
 
 
 class SearchProcessor:

@@ -8,8 +8,8 @@ complexities of file processing, tile management, and search operations through
 specialized components.
 """
 
-from .core.parser import Parser
-from .parallel import BatchProcessor, BatchProcessingConfig
+from zomboid_map_parser.processing.core.parser import Parser
+from zomboid_map_parser.processing.parallel import BatchProcessor, BatchProcessingConfig
 
 __all__ = [
     "Parser",

@@ -3,9 +3,9 @@ from pathlib import Path
 from typing import List, Dict
 import logging
 
-from zomboid_map_parser.models import MapCell
+from zomboid_map_parser.models import MapCell, CellCoord
 from zomboid_map_parser.utils.exceptions import ParserError
-from zomboid_map_parser.utils import CellCoord, BoundsCoord
+from zomboid_map_parser.utils import BoundsCoord
 
 
 class FileManager:
